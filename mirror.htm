@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Echo+Mirror</title>
+    <meta charset="utf-8">
+  </head>
+  <body style="padding: 0;margin: 0;">
+	<video autoplay style="position: fixed;bottom: 0;background: rgba(0, 0, 0, 0.5);color: #f1f1f1;width: 100%;padding: 20px; object-position: left top;padding:0"></video >
+    <script>
+		if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+			
+			const constraints3 = {
+			  video: true,
+			  audio: true
+			};
+			
+			const video = document.querySelector('video');
+
+			navigator.mediaDevices.getUserMedia(constraints3).then((stream) => {video.srcObject = stream});
+		} else {
+		  alert('getUserMedia() is not supported by your browser');
+		}
+	</script>
+  </body>
+</html>
